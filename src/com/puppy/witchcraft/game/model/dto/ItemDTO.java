@@ -85,5 +85,10 @@ public class ItemDTO {
 		return "ItemDTO [itemNo=" + itemNo + ", itemType=" + itemType + ", itemName=" + itemName + ", itemInfo="
 				+ itemInfo + ", itemSell=" + itemSell + ", itemBuy=" + itemBuy + ", imageNo=" + imageNo + "]";
 	}
+
+	public Object getQuantity() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

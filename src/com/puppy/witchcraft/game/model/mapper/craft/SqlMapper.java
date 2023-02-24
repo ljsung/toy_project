@@ -8,4 +8,6 @@ public interface SqlMapper {
 
 	List<ItemDTO> test();
 
+	List<ItemDTO> selectItems();
+
 }

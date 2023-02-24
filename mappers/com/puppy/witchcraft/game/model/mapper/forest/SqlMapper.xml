@@ -11,7 +11,8 @@
 		<result property="itemBuy" column="ITEM_BUY"/>
 		<result property="imageNo" column="IMAGE_NO"/>
 	</resultMap>	
-		<select id="test" resultMap="ForestItemDTO">
+	
+		<select id="rnditem" resultMap="ForestItemDTO" parameterType = "_int">
 		SELECT
 			ITEM_NO
 		  , ITEM_TYPE
@@ -21,7 +22,22 @@
 		  , ITEM_BUY
 		  , IMAGE_NO
 		FROM ITEM
-		WHERE ITEM_NO = 1
+		WHERE ITEM_NO = #{ itemNo }
 		</select>
-			
+		
+		<insert id="insertforestitem" parameterType = "HashMap">
+		INSERT 
+		INTO ITEM_INVEN
+		 (
+			INVEN_NO,
+			P_NO,
+			ITEM_NO
+		 )
+		 VALUES
+		 (
+		 	SEQ_ITEM_INVEN_NO.NEXTVAL,
+		 	#{ playerNo },
+		 	#{ itemNo }
+		 )
+		</insert>
 </mapper>
