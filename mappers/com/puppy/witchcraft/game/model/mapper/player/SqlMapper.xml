@@ -3,4 +3,5 @@
 <mapper namespace="com.puppy.witchcraft.game.model.mapper.player.SqlMapper">
 
 
+
 </mapper>

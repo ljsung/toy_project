@@ -6,7 +6,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
-import com.puppy.witchcraft.game.view.ForestMenu;
+import com.puppy.witchcraft.game.view.pages.SigninPage;
 
 public class MainFrame extends JFrame {
 	
@@ -20,7 +20,9 @@ public class MainFrame extends JFrame {
 		
 		/* 초기 게임 시작화면으로 프레임값과 함께 넘어감 */
 //		new GameMenu(this);
-		new ForestMenu(this);
+		new SigninPage(this);
+//		new StartMenu(this);
+//		new ForestMenu(this);
 //		new Forestfirst(this);
 //		new Forestsecond(this);
 //		new Forestthird(this);
