@@ -19,6 +19,8 @@ import javax.swing.JTextField;
 
 import com.puppy.witchcraft.common.CommonConstants;
 import com.puppy.witchcraft.common.MainFrame;
+import com.puppy.witchcraft.game.controller.PlayerController;
+import com.puppy.witchcraft.game.model.dto.PlayerDTO;
 import com.puppy.witchcraft.game.view.GameMenu;
 import com.puppy.witchcraft.game.view.MainMap;
 import com.puppy.witchcraft.game.view.StartMenu;
@@ -35,6 +37,7 @@ public class SigninPage extends JPanel {
 	private MainFrame mf;
 	private JPanel signinPage;
 	
+	private PlayerController playerController = new PlayerController();
 	public SigninPage(MainFrame mf) {
 		
 		/*현재 프레임 및 클래스 set*/
@@ -121,6 +124,12 @@ public class SigninPage extends JPanel {
 				
 				String nickName = inputNickname.getText();
 				System.out.println("\n" + nickName);
+				
+				PlayerDTO player = new PlayerDTO();
+				player.setPlayerId(id);
+				player.setPlayerPwd(pwd.toString());
+				player.setPlayerNickname(nickName);
+				playerController.insertplayer(player);
 				
 				changePanel(mf, signinPage, new GameMenu(mf));
 				System.out.println("가입됨, 로그인가능, GameMenu로 이동");
