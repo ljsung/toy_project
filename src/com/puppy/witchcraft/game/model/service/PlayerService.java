@@ -4,6 +4,8 @@ import org.apache.ibatis.session.SqlSession;
 
 import static com.puppy.witchcraft.common.Template.getSqlSession;
 
+import java.util.Map;
+
 import com.puppy.witchcraft.game.model.dto.PlayerDTO;
 import com.puppy.witchcraft.game.model.mapper.player.SqlMapper;
 
@@ -11,8 +13,7 @@ public class PlayerService {
 
 	private static SqlMapper mapper;
 
-
-	public int insertplayer(PlayerDTO player) {
+	public int insertplayer(Map<String, String> player) {
 		SqlSession sqlSession = getSqlSession();
 		mapper = sqlSession.getMapper(SqlMapper.class);
 
@@ -30,4 +31,4 @@ public class PlayerService {
 		return result;
 
 	}
-} 
+}

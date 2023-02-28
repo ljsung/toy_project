@@ -1,5 +1,8 @@
 package com.puppy.witchcraft.game.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.puppy.witchcraft.game.model.dto.PlayerDTO;
 import com.puppy.witchcraft.game.model.service.PlayerService;
 
@@ -12,11 +15,10 @@ public class PlayerController {
 
 	public void insertplayer(String id, String pwd, String nickname) {
 		
-		player = new PlayerDTO();
-		player.setPlayerId(id);
-		player.setPlayerPwd(pwd);
-		player.setPlayerNickname(nickname);
-		
+		Map<String, String> player = new HashMap<>();
+		player.put("id", id);
+		player.put("pwd", pwd);
+		player.put("nickname", nickname);
 		int result = playerservice.insertplayer(player);
 		//임시로 해둔거
 		if(result > 0) {
